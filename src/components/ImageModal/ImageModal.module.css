@@ -1,0 +1,36 @@
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(4, 3, 3, 0.6);
+    z-index: 1000;
+    overflow: auto;
+}
+
+
+.modal {
+    position: relative;
+    max-width: 120vh;
+    max-height: 120vh;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+}
+
+.modalCardDescription {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 500;
+    color: #ffffff;
+    height: 46px;
+    padding: 6px;
+    background-color: #62566e;
+
+}

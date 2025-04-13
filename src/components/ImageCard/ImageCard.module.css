@@ -1,0 +1,31 @@
+.cardWrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.cardImage {
+    height: 200px;
+    width: 100%;
+    /* object-fit: cover;
+    object-position: center; */
+}
+
+.cardWrapper:hover {
+    transform: scale(1.1);
+}
+
+.cardDescription {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    color: #0e0e0e;
+    height: 42px;
+    padding: 4px;
+    background-color: #f0efed;
+}
