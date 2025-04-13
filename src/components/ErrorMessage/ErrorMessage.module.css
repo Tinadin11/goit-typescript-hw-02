@@ -1,9 +1,22 @@
 .errorText {
     display: block;
-    color: #900707;
+    color: #e7cb0b;
     text-align: center;
     margin-top: 20px;
     font-size: 18px;
     font-weight: bold;
 
+    white-space: nowrap;
+    animation: typing 3s steps(20, end) forwards;
+
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
 }
