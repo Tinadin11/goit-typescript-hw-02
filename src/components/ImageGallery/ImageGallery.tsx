@@ -1,12 +1,19 @@
 import ImageCard from "../ImageCard/ImageCard";
+import { Image } from "../App/App.types";
 import css from "./ImageGallery.module.css";
 
-const ImageGallery = ({ gallery, updateModal, openModal }) => {
+
+type ImageGalleryProps = {
+  gallery: Image[];
+  updateModal: (url: string, alt: string) => void;
+  openModal: () => void;
+};
+
+const ImageGallery: React.FC<ImageGalleryProps> = ({ gallery, updateModal, openModal }) => {
   return (
     <ul className={css.itemsContainer}>
       {gallery.map(({ id, alt_description, urls }, index) => {
-        const key = `${id}-${index}`; // -- додано індекс, бо я ніфіга не розумію з тими помилками
-        // console.log(key);
+        const key = `${id}-${index}`; //console.log(key);
         return (
           <li className={css.cardItem} key={key} onClick={openModal}>
             <ImageCard

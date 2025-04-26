@@ -7,11 +7,19 @@ import { Field, Form, Formik } from "formik";
 import { TbPhotoSearch } from "react-icons/tb";
 import css from "./SearchBar.module.css";
 
-const initialValues = { query: "" };
+// типізую пропс, який використовую та значення у Формі
+type SearchBarProps = {
+  onSubmit: (query: string) => void;
+}
+type FormValues = {
+  query: string;
+}
 
-const SearchBar = ({ onSubmit }) => {
-  const vantaRef = useRef(null);
-  const [vantaEffect, setVantaEffect] = useState(null);
+const initialValues: FormValues = { query: "" };
+
+const SearchBar: React.FC<SearchBarProps> = ({ onSubmit }) => {
+  const vantaRef = useRef<HTMLDivElement | null>(null);
+  const [vantaEffect, setVantaEffect] = useState<ReturnType<typeof WAVES> | null>(null);
 
   useEffect(() => {
     if (!vantaEffect) {
@@ -41,7 +49,7 @@ const SearchBar = ({ onSubmit }) => {
   return (
     <header className={`${css.header}`} ref={vantaRef}>
       <div className={css.formWrapper}>
-        <Formik
+        <Formik<FormValues>
           initialValues={initialValues}
           onSubmit={(values, actions) => {
             if (!values.query) {

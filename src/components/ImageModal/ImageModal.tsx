@@ -1,10 +1,18 @@
-import Modal from "react-modal";
+import Modal from "react-modal"; 
+//👆не забути інсталювати бібліотеку npm install --save-dev @types/react-modal
+
 import { useEffect, useState } from "react";
 import css from "./ImageModal.module.css";
 
 Modal.setAppElement("#root");
 
-const ImageModal = ({ src, alt, onClose }) => {
+//типізую своє щастя
+type ImageModalProps = {
+  src: string | null;
+  alt: string;
+  onClose: () => void;
+}
+const ImageModal: React.FC<ImageModalProps>  = ({ src, alt, onClose }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
